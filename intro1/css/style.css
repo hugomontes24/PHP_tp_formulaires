@@ -1,0 +1,129 @@
+body{
+    min-height: 100vh;
+    font-family: Helvetica, Geneva, Tahoma, sans-serif;
+    color: rgb(36, 43, 34);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+header{
+    display: grid;
+    grid-template-columns: 4fr 1fr ;
+    background-color: rgba(11, 85, 42, 0.842);
+    color:rgb(251, 251, 245);
+    padding: 20px ;
+}
+
+header .site-logo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    font-size: 1.8em;
+}
+
+header .site-description{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+header #lienNav{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding-left: 50px;
+    padding-top: 16px;   
+}
+
+a:link, a:visited{
+    color:rgb(250, 246, 241);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: rgb(221, 79, 28);
+}
+
+main{
+    margin: 20px auto;
+    padding: 40px 0px 40px;
+    min-width: 600px;
+}
+
+main form{
+    text-align: center;
+    padding: 0;
+}
+main form p{
+    text-align: right;
+    color: rgba(194, 41, 143, 0.8);
+}
+main form button{
+    background: rgba(194, 41, 143, 0.3);
+    /* border-color: 2px solid rgba(194, 41, 143, 0.4); */
+    padding: 4px 25px;
+    border: 0;
+    letter-spacing: 1px;
+}
+main #backg{
+    background: rgba(243, 234, 153, 0.596);
+    border: 1px solid rgba(243, 234, 153, 0.596);
+}
+main legend{
+    text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.6em;
+    color: rgb(20, 24, 19);
+}
+main fieldset.form-group{
+    margin: 15px 0;
+    border: 1px solid rgba(194, 41, 143, 0.1);
+    background: rgba(194, 41, 143, 0.2);
+}
+main input[type=text], main input[type=email]{
+    border: 0;
+    border-bottom: 1px dotted rgba(43, 35, 40, 0.452);
+    background:rgba(194, 41, 143, 0.0) ;
+    margin: 4px auto;
+
+}
+
+main picture{
+    display : grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+main img{
+    width: 300px;
+    height: 185px;
+    margin:0;
+    
+}
+
+footer{
+    background-color: rgba(11, 85, 42, 0.842);
+    color:rgb(250, 246, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 50px;
+    text-align: center;
+    /* padding: 0; */
+    margin: 0;
+}
+footer a{
+    display: block;
+    background-color: rgba(11, 85, 42, 0.842);
+    margin: -74px auto 0;
+    padding: 2px 5px;
+    width: 18px;
+    border-radius: 5px 5px 0 0 ;
+    
+}
+footer i{
+    color: azure;
+}
+
+footer a:link, footer a:visited{    
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: none;
+    background-color: rgb(29, 178, 192);
+}

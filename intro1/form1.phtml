@@ -1,0 +1,110 @@
+<?php
+include('./include/header.php');?>  
+<main>
+    <h1>Traitement de formulaires en méthode POST</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
+        
+        <fieldset id="backg">
+            <legend>Saisie d'un contact</legend>
+            <p class="form-message">Les champs précédés d'un * sont requis</p>       
+            
+            <fieldset class="form-group">
+                <legend>Civilité * </legend> 
+                <div class="form-error<?php if(isset($errors['gender'] ) ) : echo ' error'; endif; ?>">
+                    <?php if(isset($errors['gender']) ) : ?>
+                    <p class="form_error"><?= $errors['gender']; ?></p>
+                    <?php endif;    
+                        foreach ( $gender as $key => $value) : ?>
+                            <label for="<?= $key; ?>">
+                                <input
+                                type="radio" 
+                                name="gender" 
+                                value="<?= $key; ?>" 
+                                id="<?= $key; ?>">
+                            <?= $value; ?></label> 
+                  <?php endforeach; ?>
+                        <!-- <input type="radio" name="gender" value="mrs" id="mrs">Madame
+                    </label>
+                    <label for="mister">
+                        <input type="radio" name="gender" value="mister" id="mister">Monsieur
+                    </label>
+                    <label for="other">
+                        <input type="radio" name="gender" value="other" id="other">Autre
+                    </label> -->
+                </div>
+            </fieldset >
+
+            <fieldset class="form-group">
+                <legend>Infos personnelles *</legend>
+                <div class="form-error<?php if(isset($errors['firstname'] ) ) : echo ' error'; endif; ?>">
+                    <?php if(isset($errors['firstname']) ) : ?>
+                    <p class="form_error"><?= $errors['firstname']; ?></p>
+                    <?php endif; ?>
+                    <label for="firstname">
+                        Prénom * : <input type="text" name="firstname" id="firstname" value="<?php formDataLoad('firstname'); ?>" required>
+                    </label>
+                </div>
+
+                <div class="form-error<?php if(isset($errors['lastname'] ) ) : echo ' error'; endif; ?>">
+                    <?php if(isset($errors['lastname']) ) : ?>
+                    <p class="form_error"><?= $errors['lastname']; ?></p>
+                    <?php endif; ?>
+                    <label for="lastname">
+                        Nom * &nbsp; &nbsp;&nbsp; : <input type="text" name="lastname" value="<?php formDataLoad('lastname'); ?>" id="lastname" required>
+                    </label>
+                </div>
+                <div class="form-error<?php if(isset($errors['email'] ) ) : echo ' error'; endif; ?>">
+                    <?php if(isset($errors['email']) ) : ?>
+                    <p class="form_error"><?= $errors['email']; ?></p>
+                    <?php endif; ?>
+                    <label for="email">
+                        Email * &nbsp;&nbsp; : <input type="email" name="email" id="email" value="<?php formDataLoad('email'); ?>" placeholder ="somebody@free.fr" required>
+                    </label>           
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Hobbies</legend>
+                <div class="form-error<?php if(isset($errors['hobbies'] ) ) : echo ' error'; endif; ?>">
+                <?php 
+                foreach( $hobbies as $key=>$value) : ?>
+                    <label for="<?= $key; ?>" >
+                        <input 
+                            type="checkbox" 
+                            id="<?= $key; ?>"
+                            name="hobbies[]"
+                            value="<?= $key; ?>">
+                            <?= $value; ?>
+                    </label>
+       <?php    endforeach;  ?>  
+
+                <!-- <label for="">
+                    <input type="checkbox" id="games" name="hobbies[]" value="games">
+                    Jeux vidéo
+                 </label>
+                <label for="music">
+                    <input type="checkbox" id="music" name="hobbies[]" value="music">
+                    Musique
+                </label>
+                <label for="scrabble">
+                    <input type="checkbox" id="scrabble" name="hobbies[]" value="scrabble">
+                    Scrabble
+                </label>
+                <label for="danse">
+                    <input type="checkbox" id="danse" name="hobbies[]" value="danse">
+                    Danse
+                </label>
+                <label for="cinema">
+                    <input type="checkbox" id="cinema" name="hobbies[]" value="cinema">
+                    Cinéma
+                </label> -->
+                </div>
+            </fieldset>
+
+            <button type="submit" >valider</button>                
+        </fieldset>
+    </form>
+</main>
+<?php
+include('./include/footer.php');
+?>
