@@ -41,7 +41,7 @@ include('./include/header.php');?>
                     <p class="form_error"><?= $errors['firstname']; ?></p>
                     <?php endif; ?>
                     <label for="firstname">
-                        Prénom * : <input type="text" name="firstname" id="firstname" value="<?php formDataLoad('firstname'); ?>" required>
+                        Prénom * : &nbsp;<input type="text" name="firstname" id="firstname" value="<?php formDataLoad('firstname'); ?>" required>
                     </label>
                 </div>
 
@@ -50,7 +50,7 @@ include('./include/header.php');?>
                     <p class="form_error"><?= $errors['lastname']; ?></p>
                     <?php endif; ?>
                     <label for="lastname">
-                        Nom * &nbsp; &nbsp;&nbsp; : <input type="text" name="lastname" value="<?php formDataLoad('lastname'); ?>" id="lastname" required>
+                        Nom * &nbsp; &nbsp;&nbsp; : &nbsp;<input type="text" name="lastname" value="<?php formDataLoad('lastname'); ?>" id="lastname" required>
                     </label>
                 </div>
                 <div class="form-error<?php if(isset($errors['email'] ) ) : echo ' error'; endif; ?>">
@@ -58,7 +58,7 @@ include('./include/header.php');?>
                     <p class="form_error"><?= $errors['email']; ?></p>
                     <?php endif; ?>
                     <label for="email">
-                        Email * &nbsp;&nbsp; : <input type="email" name="email" id="email" value="<?php formDataLoad('email'); ?>" placeholder ="somebody@free.fr" required>
+                        Email * &nbsp;&nbsp; : &nbsp;<input type="email" name="email" id="email" value="<?php formDataLoad('email'); ?>" placeholder ="somebody@free.fr" required>
                     </label>           
                 </div>
             </fieldset>
